@@ -14,20 +14,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name : Checkout repo
+      - name : Checkout repo
       uses : actions/checkout@v3
 
 
-      -name: Set up a node js project
+      - name: Set up a node js project
       uses: actions/setup-node@v3
       with:
         node-version: 18
 
-      -name: Install dependicies from package.json
-      uses: npm i
+      - name: Install dependicies from package.json
+      run: npm i
 
-      -name: download playwright browsers
-      uses: npx i playwright
+      - name: download playwright browsers
+      run: npx i playwright
 
-      -name: run tests
-      uses: npx playwright test      
+      - name: run tests
+      run: npx playwright test      
