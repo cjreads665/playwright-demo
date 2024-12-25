@@ -1,0 +1,33 @@
+name : Playwright Testing Demo
+
+on: 
+  push:
+    branches:
+      -main
+  pull_request:
+    branches:
+      -main
+
+
+jobs:
+  test: 
+    runs-on: ubuntu-latest
+
+    steps:
+      -name : Checkout repo
+      uses : actions/checkout@v3
+
+
+      -name: Set up a node js project
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+      -name: Install dependicies from package.json
+      uses: npm i
+
+      -name: download playwright browsers
+      uses: npx i playwright
+
+      -name: run tests
+      uses: npx playwright test      
